@@ -1,0 +1,16 @@
+import requests
+
+def consultar(continents):
+  url = f' https://disease.sh/v3/covid-19/continents/{continents}'
+
+  r = requests.get(url)
+  if (r.status_code == 200):
+      print()
+
+      print('total de casos :', r.json() ['cases'])
+
+  else:
+        print('erro na consulta')
+
+continents = input('digite o continente: ')
+consultar(continents)

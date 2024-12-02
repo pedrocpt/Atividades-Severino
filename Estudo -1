@@ -1,0 +1,30 @@
+continentes = ["África", "América do Norte", "América do Sul", "Antártida", "Ásia", "Europa", "Oceania"]
+
+print("Escolha um continente abaixo:")
+for i, continente in enumerate(continentes):
+  print(f"{i+1}. {continente}")
+
+while True:
+  try:
+    es = int(input("Digite o número do continente que você deseja: "))
+    if 1 <= es <= len(continentes):
+      escolhido = continentes[es - 1]
+      print(f"Você escolheu: {escolhido}")
+
+      traducoes = {
+          "África": "Africa",
+          "América do Norte": "North America",
+          "América do Sul": "South America",
+          "Antártida": "Antarctica",
+          "Ásia": "Asia",
+          "Europa": "Europe",
+          "Oceania": "Oceania"
+      }
+      ingles = traducoes.get(escolhido)
+      print(f"Nome do continente em inglês: {ingles}")
+
+      break
+    else:
+      print("Número inválido, digite um número valido e tente novamente.")
+  except ValueError:
+    print("Erro. Digite um número.")
